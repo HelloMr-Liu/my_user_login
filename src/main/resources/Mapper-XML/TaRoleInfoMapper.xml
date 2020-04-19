@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.TaRoleInfoMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.TaRoleInfo">
+    <id column="role_info_id" jdbcType="INTEGER" property="roleInfoId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="member_number" jdbcType="INTEGER" property="memberNumber" />
+    <result column="role_create_time" jdbcType="TIMESTAMP" property="roleCreateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    role_info_id, role_name, member_number, role_create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ta_role_info
+    where role_info_id = #{roleInfoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ta_role_info
+    where role_info_id = #{roleInfoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.TaRoleInfo">
+    insert into ta_role_info (role_info_id, role_name, member_number, 
+      role_create_time)
+    values (#{roleInfoId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{memberNumber,jdbcType=INTEGER}, 
+      #{roleCreateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.TaRoleInfo">
+    insert into ta_role_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleInfoId != null">
+        role_info_id,
+      </if>
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="memberNumber != null">
+        member_number,
+      </if>
+      <if test="roleCreateTime != null">
+        role_create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleInfoId != null">
+        #{roleInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberNumber != null">
+        #{memberNumber,jdbcType=INTEGER},
+      </if>
+      <if test="roleCreateTime != null">
+        #{roleCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.TaRoleInfo">
+    update ta_role_info
+    <set>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberNumber != null">
+        member_number = #{memberNumber,jdbcType=INTEGER},
+      </if>
+      <if test="roleCreateTime != null">
+        role_create_time = #{roleCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where role_info_id = #{roleInfoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.TaRoleInfo">
+    update ta_role_info
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      member_number = #{memberNumber,jdbcType=INTEGER},
+      role_create_time = #{roleCreateTime,jdbcType=TIMESTAMP}
+    where role_info_id = #{roleInfoId,jdbcType=INTEGER}
+  </update>
+</mapper>

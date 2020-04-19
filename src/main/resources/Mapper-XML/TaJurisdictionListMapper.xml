@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.TaJurisdictionListMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.TaJurisdictionList">
+    <id column="jurisdiction_list_id" jdbcType="INTEGER" property="jurisdictionListId" />
+    <result column="model_name" jdbcType="CHAR" property="modelName" />
+    <result column="is_parent" jdbcType="INTEGER" property="isParent" />
+    <result column="parent_id" jdbcType="CHAR" property="parentId" />
+    <result column="model_id" jdbcType="CHAR" property="modelId" />
+    <result column="model_path" jdbcType="CHAR" property="modelPath" />
+    <result column="icon_class" jdbcType="CHAR" property="iconClass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    jurisdiction_list_id, model_name, is_parent, parent_id, model_id, model_path, icon_class
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ta_jurisdiction_list
+    where jurisdiction_list_id = #{jurisdictionListId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ta_jurisdiction_list
+    where jurisdiction_list_id = #{jurisdictionListId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.TaJurisdictionList">
+    insert into ta_jurisdiction_list (jurisdiction_list_id, model_name, is_parent, 
+      parent_id, model_id, model_path, 
+      icon_class)
+    values (#{jurisdictionListId,jdbcType=INTEGER}, #{modelName,jdbcType=CHAR}, #{isParent,jdbcType=INTEGER}, 
+      #{parentId,jdbcType=CHAR}, #{modelId,jdbcType=CHAR}, #{modelPath,jdbcType=CHAR}, 
+      #{iconClass,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.TaJurisdictionList">
+    insert into ta_jurisdiction_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jurisdictionListId != null">
+        jurisdiction_list_id,
+      </if>
+      <if test="modelName != null">
+        model_name,
+      </if>
+      <if test="isParent != null">
+        is_parent,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="modelId != null">
+        model_id,
+      </if>
+      <if test="modelPath != null">
+        model_path,
+      </if>
+      <if test="iconClass != null">
+        icon_class,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jurisdictionListId != null">
+        #{jurisdictionListId,jdbcType=INTEGER},
+      </if>
+      <if test="modelName != null">
+        #{modelName,jdbcType=CHAR},
+      </if>
+      <if test="isParent != null">
+        #{isParent,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="modelId != null">
+        #{modelId,jdbcType=CHAR},
+      </if>
+      <if test="modelPath != null">
+        #{modelPath,jdbcType=CHAR},
+      </if>
+      <if test="iconClass != null">
+        #{iconClass,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.TaJurisdictionList">
+    update ta_jurisdiction_list
+    <set>
+      <if test="modelName != null">
+        model_name = #{modelName,jdbcType=CHAR},
+      </if>
+      <if test="isParent != null">
+        is_parent = #{isParent,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=CHAR},
+      </if>
+      <if test="modelId != null">
+        model_id = #{modelId,jdbcType=CHAR},
+      </if>
+      <if test="modelPath != null">
+        model_path = #{modelPath,jdbcType=CHAR},
+      </if>
+      <if test="iconClass != null">
+        icon_class = #{iconClass,jdbcType=CHAR},
+      </if>
+    </set>
+    where jurisdiction_list_id = #{jurisdictionListId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.TaJurisdictionList">
+    update ta_jurisdiction_list
+    set model_name = #{modelName,jdbcType=CHAR},
+      is_parent = #{isParent,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=CHAR},
+      model_id = #{modelId,jdbcType=CHAR},
+      model_path = #{modelPath,jdbcType=CHAR},
+      icon_class = #{iconClass,jdbcType=CHAR}
+    where jurisdiction_list_id = #{jurisdictionListId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.TaModelMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.TaModel">
+    <id column="model_id" jdbcType="CHAR" property="modelId" />
+    <result column="model_name" jdbcType="CHAR" property="modelName" />
+    <result column="model_create_time" jdbcType="TIMESTAMP" property="modelCreateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    model_id, model_name, model_create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ta_model
+    where model_id = #{modelId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from ta_model
+    where model_id = #{modelId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.TaModel">
+    insert into ta_model (model_id, model_name, model_create_time
+      )
+    values (#{modelId,jdbcType=CHAR}, #{modelName,jdbcType=CHAR}, #{modelCreateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.TaModel">
+    insert into ta_model
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="modelId != null">
+        model_id,
+      </if>
+      <if test="modelName != null">
+        model_name,
+      </if>
+      <if test="modelCreateTime != null">
+        model_create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="modelId != null">
+        #{modelId,jdbcType=CHAR},
+      </if>
+      <if test="modelName != null">
+        #{modelName,jdbcType=CHAR},
+      </if>
+      <if test="modelCreateTime != null">
+        #{modelCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.TaModel">
+    update ta_model
+    <set>
+      <if test="modelName != null">
+        model_name = #{modelName,jdbcType=CHAR},
+      </if>
+      <if test="modelCreateTime != null">
+        model_create_time = #{modelCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where model_id = #{modelId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.TaModel">
+    update ta_model
+    set model_name = #{modelName,jdbcType=CHAR},
+      model_create_time = #{modelCreateTime,jdbcType=TIMESTAMP}
+    where model_id = #{modelId,jdbcType=CHAR}
+  </update>
+</mapper>

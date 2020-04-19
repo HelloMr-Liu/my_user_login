@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.StudentInfoMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.StudentInfo">
+    <id column="studentID" jdbcType="INTEGER" property="studentid" />
+    <result column="studentCode1" jdbcType="CHAR" property="studentcode1" />
+    <result column="studentCode2" jdbcType="CHAR" property="studentcode2" />
+    <result column="studentCode3" jdbcType="CHAR" property="studentcode3" />
+    <result column="studentCode4" jdbcType="CHAR" property="studentcode4" />
+    <result column="studentCode5" jdbcType="CHAR" property="studentcode5" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="nation" jdbcType="TINYINT" property="nation" />
+    <result column="departmentCode" jdbcType="CHAR" property="departmentcode" />
+    <result column="classNo" jdbcType="CHAR" property="classno" />
+    <result column="duty" jdbcType="INTEGER" property="duty" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="homeTel" jdbcType="VARCHAR" property="hometel" />
+    <result column="homeAddress" jdbcType="VARCHAR" property="homeaddress" />
+    <result column="homeGPS" jdbcType="VARCHAR" property="homegps" />
+    <result column="homeBeiDou" jdbcType="VARCHAR" property="homebeidou" />
+    <result column="buildNo" jdbcType="INTEGER" property="buildno" />
+    <result column="roomNo" jdbcType="INTEGER" property="roomno" />
+    <result column="political" jdbcType="TINYINT" property="political" />
+    <result column="nativePlace" jdbcType="VARCHAR" property="nativeplace" />
+    <result column="familyMember" jdbcType="VARCHAR" property="familymember" />
+    <result column="resume" jdbcType="VARCHAR" property="resume" />
+    <result column="photoName" jdbcType="VARCHAR" property="photoname" />
+    <result column="IDNo" jdbcType="CHAR" property="idno" />
+    <result column="category" jdbcType="TINYINT" property="category" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="difficultyFlag" jdbcType="TINYINT" property="difficultyflag" />
+    <result column="dropOutFlag" jdbcType="TINYINT" property="dropoutflag" />
+    <result column="recordFlag" jdbcType="TINYINT" property="recordflag" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="weixin" jdbcType="VARCHAR" property="weixin" />
+    <result column="gradSchool" jdbcType="VARCHAR" property="gradschool" />
+    <result column="gradDuty" jdbcType="VARCHAR" property="gradduty" />
+    <result column="awardInfo" jdbcType="VARCHAR" property="awardinfo" />
+    <result column="BBInfo" jdbcType="VARCHAR" property="bbinfo" />
+    <result column="safetyboxFlag" jdbcType="TINYINT" property="safetyboxflag" />
+    <result column="smokeFlag" jdbcType="TINYINT" property="smokeflag" />
+    <result column="playGameFlag" jdbcType="TINYINT" property="playgameflag" />
+    <result column="sourceProvince" jdbcType="VARCHAR" property="sourceprovince" />
+    <result column="sourceCity" jdbcType="VARCHAR" property="sourcecity" />
+    <result column="sourceRegion" jdbcType="VARCHAR" property="sourceregion" />
+    <result column="postCode" jdbcType="CHAR" property="postcode" />
+    <result column="fatherTel" jdbcType="VARCHAR" property="fathertel" />
+    <result column="fatherCorp" jdbcType="VARCHAR" property="fathercorp" />
+    <result column="motherTel" jdbcType="VARCHAR" property="mothertel" />
+    <result column="motherCorp" jdbcType="VARCHAR" property="mothercorp" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="schoolRoll" jdbcType="INTEGER" property="schoolroll" />
+    <result column="graduateDate" jdbcType="DATE" property="graduatedate" />
+    <result column="delFlag" jdbcType="TINYINT" property="delflag" />
+    <result column="majorCode" jdbcType="CHAR" property="majorcode" />
+    <result column="majorName" jdbcType="VARCHAR" property="majorname" />
+    <result column="branchID" jdbcType="INTEGER" property="branchid" />
+    <result column="branchName" jdbcType="VARCHAR" property="branchname" />
+    <result column="majorCode2" jdbcType="CHAR" property="majorcode2" />
+    <result column="majorName2" jdbcType="VARCHAR" property="majorname2" />
+    <result column="majorCode3" jdbcType="CHAR" property="majorcode3" />
+    <result column="majorName3" jdbcType="VARCHAR" property="majorname3" />
+    <result column="majorCode4" jdbcType="VARCHAR" property="majorcode4" />
+    <result column="majorName4" jdbcType="VARCHAR" property="majorname4" />
+    <result column="majorCode5" jdbcType="VARCHAR" property="majorcode5" />
+    <result column="majorName5" jdbcType="VARCHAR" property="majorname5" />
+    <result column="reserve1" jdbcType="VARCHAR" property="reserve1" />
+    <result column="reserve2" jdbcType="VARCHAR" property="reserve2" />
+    <result column="roomchargeCode" jdbcType="INTEGER" property="roomchargecode" />
+    <result column="modifyReason" jdbcType="VARCHAR" property="modifyreason" />
+    <result column="employeeName" jdbcType="VARCHAR" property="employeename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    studentID, studentCode1, studentCode2, studentCode3, studentCode4, studentCode5, 
+    "name", sex, birthday, nation, departmentCode, classNo, duty, mobile, homeTel, homeAddress, 
+    homeGPS, homeBeiDou, buildNo, roomNo, political, nativePlace, familyMember, resume, 
+    photoName, IDNo, category, "status", difficultyFlag, dropOutFlag, recordFlag, qq, 
+    weixin, gradSchool, gradDuty, awardInfo, BBInfo, safetyboxFlag, smokeFlag, playGameFlag, 
+    sourceProvince, sourceCity, sourceRegion, postCode, fatherTel, fatherCorp, motherTel, 
+    motherCorp, note, schoolRoll, graduateDate, delFlag, majorCode, majorName, branchID, 
+    branchName, majorCode2, majorName2, majorCode3, majorName3, majorCode4, majorName4, 
+    majorCode5, majorName5, reserve1, reserve2, roomchargeCode, modifyReason, employeeName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student_info
+    where studentID = #{studentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from student_info
+    where studentID = #{studentid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.StudentInfo">
+    insert into student_info (studentID, studentCode1, studentCode2, 
+      studentCode3, studentCode4, studentCode5, 
+      "name", sex, birthday, nation, 
+      departmentCode, classNo, duty, 
+      mobile, homeTel, homeAddress, 
+      homeGPS, homeBeiDou, buildNo, 
+      roomNo, political, nativePlace, 
+      familyMember, resume, photoName, 
+      IDNo, category, "status", 
+      difficultyFlag, dropOutFlag, recordFlag, 
+      qq, weixin, gradSchool, 
+      gradDuty, awardInfo, BBInfo, 
+      safetyboxFlag, smokeFlag, playGameFlag, 
+      sourceProvince, sourceCity, sourceRegion, 
+      postCode, fatherTel, fatherCorp, 
+      motherTel, motherCorp, note, 
+      schoolRoll, graduateDate, delFlag, 
+      majorCode, majorName, branchID, 
+      branchName, majorCode2, majorName2, 
+      majorCode3, majorName3, majorCode4, 
+      majorName4, majorCode5, majorName5, 
+      reserve1, reserve2, roomchargeCode, 
+      modifyReason, employeeName)
+    values (#{studentid,jdbcType=INTEGER}, #{studentcode1,jdbcType=CHAR}, #{studentcode2,jdbcType=CHAR}, 
+      #{studentcode3,jdbcType=CHAR}, #{studentcode4,jdbcType=CHAR}, #{studentcode5,jdbcType=CHAR}, 
+      #{name,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{birthday,jdbcType=DATE}, #{nation,jdbcType=TINYINT}, 
+      #{departmentcode,jdbcType=CHAR}, #{classno,jdbcType=CHAR}, #{duty,jdbcType=INTEGER}, 
+      #{mobile,jdbcType=VARCHAR}, #{hometel,jdbcType=VARCHAR}, #{homeaddress,jdbcType=VARCHAR}, 
+      #{homegps,jdbcType=VARCHAR}, #{homebeidou,jdbcType=VARCHAR}, #{buildno,jdbcType=INTEGER}, 
+      #{roomno,jdbcType=INTEGER}, #{political,jdbcType=TINYINT}, #{nativeplace,jdbcType=VARCHAR}, 
+      #{familymember,jdbcType=VARCHAR}, #{resume,jdbcType=VARCHAR}, #{photoname,jdbcType=VARCHAR}, 
+      #{idno,jdbcType=CHAR}, #{category,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, 
+      #{difficultyflag,jdbcType=TINYINT}, #{dropoutflag,jdbcType=TINYINT}, #{recordflag,jdbcType=TINYINT}, 
+      #{qq,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR}, #{gradschool,jdbcType=VARCHAR}, 
+      #{gradduty,jdbcType=VARCHAR}, #{awardinfo,jdbcType=VARCHAR}, #{bbinfo,jdbcType=VARCHAR}, 
+      #{safetyboxflag,jdbcType=TINYINT}, #{smokeflag,jdbcType=TINYINT}, #{playgameflag,jdbcType=TINYINT}, 
+      #{sourceprovince,jdbcType=VARCHAR}, #{sourcecity,jdbcType=VARCHAR}, #{sourceregion,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=CHAR}, #{fathertel,jdbcType=VARCHAR}, #{fathercorp,jdbcType=VARCHAR}, 
+      #{mothertel,jdbcType=VARCHAR}, #{mothercorp,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, 
+      #{schoolroll,jdbcType=INTEGER}, #{graduatedate,jdbcType=DATE}, #{delflag,jdbcType=TINYINT}, 
+      #{majorcode,jdbcType=CHAR}, #{majorname,jdbcType=VARCHAR}, #{branchid,jdbcType=INTEGER}, 
+      #{branchname,jdbcType=VARCHAR}, #{majorcode2,jdbcType=CHAR}, #{majorname2,jdbcType=VARCHAR}, 
+      #{majorcode3,jdbcType=CHAR}, #{majorname3,jdbcType=VARCHAR}, #{majorcode4,jdbcType=VARCHAR}, 
+      #{majorname4,jdbcType=VARCHAR}, #{majorcode5,jdbcType=VARCHAR}, #{majorname5,jdbcType=VARCHAR}, 
+      #{reserve1,jdbcType=VARCHAR}, #{reserve2,jdbcType=VARCHAR}, #{roomchargecode,jdbcType=INTEGER}, 
+      #{modifyreason,jdbcType=VARCHAR}, #{employeename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.StudentInfo">
+    insert into student_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentid != null">
+        studentID,
+      </if>
+      <if test="studentcode1 != null">
+        studentCode1,
+      </if>
+      <if test="studentcode2 != null">
+        studentCode2,
+      </if>
+      <if test="studentcode3 != null">
+        studentCode3,
+      </if>
+      <if test="studentcode4 != null">
+        studentCode4,
+      </if>
+      <if test="studentcode5 != null">
+        studentCode5,
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="departmentcode != null">
+        departmentCode,
+      </if>
+      <if test="classno != null">
+        classNo,
+      </if>
+      <if test="duty != null">
+        duty,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="hometel != null">
+        homeTel,
+      </if>
+      <if test="homeaddress != null">
+        homeAddress,
+      </if>
+      <if test="homegps != null">
+        homeGPS,
+      </if>
+      <if test="homebeidou != null">
+        homeBeiDou,
+      </if>
+      <if test="buildno != null">
+        buildNo,
+      </if>
+      <if test="roomno != null">
+        roomNo,
+      </if>
+      <if test="political != null">
+        political,
+      </if>
+      <if test="nativeplace != null">
+        nativePlace,
+      </if>
+      <if test="familymember != null">
+        familyMember,
+      </if>
+      <if test="resume != null">
+        resume,
+      </if>
+      <if test="photoname != null">
+        photoName,
+      </if>
+      <if test="idno != null">
+        IDNo,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="status != null">
+        "status",
+      </if>
+      <if test="difficultyflag != null">
+        difficultyFlag,
+      </if>
+      <if test="dropoutflag != null">
+        dropOutFlag,
+      </if>
+      <if test="recordflag != null">
+        recordFlag,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="weixin != null">
+        weixin,
+      </if>
+      <if test="gradschool != null">
+        gradSchool,
+      </if>
+      <if test="gradduty != null">
+        gradDuty,
+      </if>
+      <if test="awardinfo != null">
+        awardInfo,
+      </if>
+      <if test="bbinfo != null">
+        BBInfo,
+      </if>
+      <if test="safetyboxflag != null">
+        safetyboxFlag,
+      </if>
+      <if test="smokeflag != null">
+        smokeFlag,
+      </if>
+      <if test="playgameflag != null">
+        playGameFlag,
+      </if>
+      <if test="sourceprovince != null">
+        sourceProvince,
+      </if>
+      <if test="sourcecity != null">
+        sourceCity,
+      </if>
+      <if test="sourceregion != null">
+        sourceRegion,
+      </if>
+      <if test="postcode != null">
+        postCode,
+      </if>
+      <if test="fathertel != null">
+        fatherTel,
+      </if>
+      <if test="fathercorp != null">
+        fatherCorp,
+      </if>
+      <if test="mothertel != null">
+        motherTel,
+      </if>
+      <if test="mothercorp != null">
+        motherCorp,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="schoolroll != null">
+        schoolRoll,
+      </if>
+      <if test="graduatedate != null">
+        graduateDate,
+      </if>
+      <if test="delflag != null">
+        delFlag,
+      </if>
+      <if test="majorcode != null">
+        majorCode,
+      </if>
+      <if test="majorname != null">
+        majorName,
+      </if>
+      <if test="branchid != null">
+        branchID,
+      </if>
+      <if test="branchname != null">
+        branchName,
+      </if>
+      <if test="majorcode2 != null">
+        majorCode2,
+      </if>
+      <if test="majorname2 != null">
+        majorName2,
+      </if>
+      <if test="majorcode3 != null">
+        majorCode3,
+      </if>
+      <if test="majorname3 != null">
+        majorName3,
+      </if>
+      <if test="majorcode4 != null">
+        majorCode4,
+      </if>
+      <if test="majorname4 != null">
+        majorName4,
+      </if>
+      <if test="majorcode5 != null">
+        majorCode5,
+      </if>
+      <if test="majorname5 != null">
+        majorName5,
+      </if>
+      <if test="reserve1 != null">
+        reserve1,
+      </if>
+      <if test="reserve2 != null">
+        reserve2,
+      </if>
+      <if test="roomchargecode != null">
+        roomchargeCode,
+      </if>
+      <if test="modifyreason != null">
+        modifyReason,
+      </if>
+      <if test="employeename != null">
+        employeeName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentid != null">
+        #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="studentcode1 != null">
+        #{studentcode1,jdbcType=CHAR},
+      </if>
+      <if test="studentcode2 != null">
+        #{studentcode2,jdbcType=CHAR},
+      </if>
+      <if test="studentcode3 != null">
+        #{studentcode3,jdbcType=CHAR},
+      </if>
+      <if test="studentcode4 != null">
+        #{studentcode4,jdbcType=CHAR},
+      </if>
+      <if test="studentcode5 != null">
+        #{studentcode5,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=TINYINT},
+      </if>
+      <if test="departmentcode != null">
+        #{departmentcode,jdbcType=CHAR},
+      </if>
+      <if test="classno != null">
+        #{classno,jdbcType=CHAR},
+      </if>
+      <if test="duty != null">
+        #{duty,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="hometel != null">
+        #{hometel,jdbcType=VARCHAR},
+      </if>
+      <if test="homeaddress != null">
+        #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homegps != null">
+        #{homegps,jdbcType=VARCHAR},
+      </if>
+      <if test="homebeidou != null">
+        #{homebeidou,jdbcType=VARCHAR},
+      </if>
+      <if test="buildno != null">
+        #{buildno,jdbcType=INTEGER},
+      </if>
+      <if test="roomno != null">
+        #{roomno,jdbcType=INTEGER},
+      </if>
+      <if test="political != null">
+        #{political,jdbcType=TINYINT},
+      </if>
+      <if test="nativeplace != null">
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="familymember != null">
+        #{familymember,jdbcType=VARCHAR},
+      </if>
+      <if test="resume != null">
+        #{resume,jdbcType=VARCHAR},
+      </if>
+      <if test="photoname != null">
+        #{photoname,jdbcType=VARCHAR},
+      </if>
+      <if test="idno != null">
+        #{idno,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="difficultyflag != null">
+        #{difficultyflag,jdbcType=TINYINT},
+      </if>
+      <if test="dropoutflag != null">
+        #{dropoutflag,jdbcType=TINYINT},
+      </if>
+      <if test="recordflag != null">
+        #{recordflag,jdbcType=TINYINT},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="gradschool != null">
+        #{gradschool,jdbcType=VARCHAR},
+      </if>
+      <if test="gradduty != null">
+        #{gradduty,jdbcType=VARCHAR},
+      </if>
+      <if test="awardinfo != null">
+        #{awardinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="bbinfo != null">
+        #{bbinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="safetyboxflag != null">
+        #{safetyboxflag,jdbcType=TINYINT},
+      </if>
+      <if test="smokeflag != null">
+        #{smokeflag,jdbcType=TINYINT},
+      </if>
+      <if test="playgameflag != null">
+        #{playgameflag,jdbcType=TINYINT},
+      </if>
+      <if test="sourceprovince != null">
+        #{sourceprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcecity != null">
+        #{sourcecity,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceregion != null">
+        #{sourceregion,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=CHAR},
+      </if>
+      <if test="fathertel != null">
+        #{fathertel,jdbcType=VARCHAR},
+      </if>
+      <if test="fathercorp != null">
+        #{fathercorp,jdbcType=VARCHAR},
+      </if>
+      <if test="mothertel != null">
+        #{mothertel,jdbcType=VARCHAR},
+      </if>
+      <if test="mothercorp != null">
+        #{mothercorp,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolroll != null">
+        #{schoolroll,jdbcType=INTEGER},
+      </if>
+      <if test="graduatedate != null">
+        #{graduatedate,jdbcType=DATE},
+      </if>
+      <if test="delflag != null">
+        #{delflag,jdbcType=TINYINT},
+      </if>
+      <if test="majorcode != null">
+        #{majorcode,jdbcType=CHAR},
+      </if>
+      <if test="majorname != null">
+        #{majorname,jdbcType=VARCHAR},
+      </if>
+      <if test="branchid != null">
+        #{branchid,jdbcType=INTEGER},
+      </if>
+      <if test="branchname != null">
+        #{branchname,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode2 != null">
+        #{majorcode2,jdbcType=CHAR},
+      </if>
+      <if test="majorname2 != null">
+        #{majorname2,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode3 != null">
+        #{majorcode3,jdbcType=CHAR},
+      </if>
+      <if test="majorname3 != null">
+        #{majorname3,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode4 != null">
+        #{majorcode4,jdbcType=VARCHAR},
+      </if>
+      <if test="majorname4 != null">
+        #{majorname4,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode5 != null">
+        #{majorcode5,jdbcType=VARCHAR},
+      </if>
+      <if test="majorname5 != null">
+        #{majorname5,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve1 != null">
+        #{reserve1,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve2 != null">
+        #{reserve2,jdbcType=VARCHAR},
+      </if>
+      <if test="roomchargecode != null">
+        #{roomchargecode,jdbcType=INTEGER},
+      </if>
+      <if test="modifyreason != null">
+        #{modifyreason,jdbcType=VARCHAR},
+      </if>
+      <if test="employeename != null">
+        #{employeename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.StudentInfo">
+    update student_info
+    <set>
+      <if test="studentcode1 != null">
+        studentCode1 = #{studentcode1,jdbcType=CHAR},
+      </if>
+      <if test="studentcode2 != null">
+        studentCode2 = #{studentcode2,jdbcType=CHAR},
+      </if>
+      <if test="studentcode3 != null">
+        studentCode3 = #{studentcode3,jdbcType=CHAR},
+      </if>
+      <if test="studentcode4 != null">
+        studentCode4 = #{studentcode4,jdbcType=CHAR},
+      </if>
+      <if test="studentcode5 != null">
+        studentCode5 = #{studentcode5,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        "name" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=TINYINT},
+      </if>
+      <if test="departmentcode != null">
+        departmentCode = #{departmentcode,jdbcType=CHAR},
+      </if>
+      <if test="classno != null">
+        classNo = #{classno,jdbcType=CHAR},
+      </if>
+      <if test="duty != null">
+        duty = #{duty,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="hometel != null">
+        homeTel = #{hometel,jdbcType=VARCHAR},
+      </if>
+      <if test="homeaddress != null">
+        homeAddress = #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homegps != null">
+        homeGPS = #{homegps,jdbcType=VARCHAR},
+      </if>
+      <if test="homebeidou != null">
+        homeBeiDou = #{homebeidou,jdbcType=VARCHAR},
+      </if>
+      <if test="buildno != null">
+        buildNo = #{buildno,jdbcType=INTEGER},
+      </if>
+      <if test="roomno != null">
+        roomNo = #{roomno,jdbcType=INTEGER},
+      </if>
+      <if test="political != null">
+        political = #{political,jdbcType=TINYINT},
+      </if>
+      <if test="nativeplace != null">
+        nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="familymember != null">
+        familyMember = #{familymember,jdbcType=VARCHAR},
+      </if>
+      <if test="resume != null">
+        resume = #{resume,jdbcType=VARCHAR},
+      </if>
+      <if test="photoname != null">
+        photoName = #{photoname,jdbcType=VARCHAR},
+      </if>
+      <if test="idno != null">
+        IDNo = #{idno,jdbcType=CHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        "status" = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="difficultyflag != null">
+        difficultyFlag = #{difficultyflag,jdbcType=TINYINT},
+      </if>
+      <if test="dropoutflag != null">
+        dropOutFlag = #{dropoutflag,jdbcType=TINYINT},
+      </if>
+      <if test="recordflag != null">
+        recordFlag = #{recordflag,jdbcType=TINYINT},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="gradschool != null">
+        gradSchool = #{gradschool,jdbcType=VARCHAR},
+      </if>
+      <if test="gradduty != null">
+        gradDuty = #{gradduty,jdbcType=VARCHAR},
+      </if>
+      <if test="awardinfo != null">
+        awardInfo = #{awardinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="bbinfo != null">
+        BBInfo = #{bbinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="safetyboxflag != null">
+        safetyboxFlag = #{safetyboxflag,jdbcType=TINYINT},
+      </if>
+      <if test="smokeflag != null">
+        smokeFlag = #{smokeflag,jdbcType=TINYINT},
+      </if>
+      <if test="playgameflag != null">
+        playGameFlag = #{playgameflag,jdbcType=TINYINT},
+      </if>
+      <if test="sourceprovince != null">
+        sourceProvince = #{sourceprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="sourcecity != null">
+        sourceCity = #{sourcecity,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceregion != null">
+        sourceRegion = #{sourceregion,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        postCode = #{postcode,jdbcType=CHAR},
+      </if>
+      <if test="fathertel != null">
+        fatherTel = #{fathertel,jdbcType=VARCHAR},
+      </if>
+      <if test="fathercorp != null">
+        fatherCorp = #{fathercorp,jdbcType=VARCHAR},
+      </if>
+      <if test="mothertel != null">
+        motherTel = #{mothertel,jdbcType=VARCHAR},
+      </if>
+      <if test="mothercorp != null">
+        motherCorp = #{mothercorp,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolroll != null">
+        schoolRoll = #{schoolroll,jdbcType=INTEGER},
+      </if>
+      <if test="graduatedate != null">
+        graduateDate = #{graduatedate,jdbcType=DATE},
+      </if>
+      <if test="delflag != null">
+        delFlag = #{delflag,jdbcType=TINYINT},
+      </if>
+      <if test="majorcode != null">
+        majorCode = #{majorcode,jdbcType=CHAR},
+      </if>
+      <if test="majorname != null">
+        majorName = #{majorname,jdbcType=VARCHAR},
+      </if>
+      <if test="branchid != null">
+        branchID = #{branchid,jdbcType=INTEGER},
+      </if>
+      <if test="branchname != null">
+        branchName = #{branchname,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode2 != null">
+        majorCode2 = #{majorcode2,jdbcType=CHAR},
+      </if>
+      <if test="majorname2 != null">
+        majorName2 = #{majorname2,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode3 != null">
+        majorCode3 = #{majorcode3,jdbcType=CHAR},
+      </if>
+      <if test="majorname3 != null">
+        majorName3 = #{majorname3,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode4 != null">
+        majorCode4 = #{majorcode4,jdbcType=VARCHAR},
+      </if>
+      <if test="majorname4 != null">
+        majorName4 = #{majorname4,jdbcType=VARCHAR},
+      </if>
+      <if test="majorcode5 != null">
+        majorCode5 = #{majorcode5,jdbcType=VARCHAR},
+      </if>
+      <if test="majorname5 != null">
+        majorName5 = #{majorname5,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve1 != null">
+        reserve1 = #{reserve1,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve2 != null">
+        reserve2 = #{reserve2,jdbcType=VARCHAR},
+      </if>
+      <if test="roomchargecode != null">
+        roomchargeCode = #{roomchargecode,jdbcType=INTEGER},
+      </if>
+      <if test="modifyreason != null">
+        modifyReason = #{modifyreason,jdbcType=VARCHAR},
+      </if>
+      <if test="employeename != null">
+        employeeName = #{employeename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where studentID = #{studentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.StudentInfo">
+    update student_info
+    set studentCode1 = #{studentcode1,jdbcType=CHAR},
+      studentCode2 = #{studentcode2,jdbcType=CHAR},
+      studentCode3 = #{studentcode3,jdbcType=CHAR},
+      studentCode4 = #{studentcode4,jdbcType=CHAR},
+      studentCode5 = #{studentcode5,jdbcType=CHAR},
+      "name" = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      birthday = #{birthday,jdbcType=DATE},
+      nation = #{nation,jdbcType=TINYINT},
+      departmentCode = #{departmentcode,jdbcType=CHAR},
+      classNo = #{classno,jdbcType=CHAR},
+      duty = #{duty,jdbcType=INTEGER},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      homeTel = #{hometel,jdbcType=VARCHAR},
+      homeAddress = #{homeaddress,jdbcType=VARCHAR},
+      homeGPS = #{homegps,jdbcType=VARCHAR},
+      homeBeiDou = #{homebeidou,jdbcType=VARCHAR},
+      buildNo = #{buildno,jdbcType=INTEGER},
+      roomNo = #{roomno,jdbcType=INTEGER},
+      political = #{political,jdbcType=TINYINT},
+      nativePlace = #{nativeplace,jdbcType=VARCHAR},
+      familyMember = #{familymember,jdbcType=VARCHAR},
+      resume = #{resume,jdbcType=VARCHAR},
+      photoName = #{photoname,jdbcType=VARCHAR},
+      IDNo = #{idno,jdbcType=CHAR},
+      category = #{category,jdbcType=TINYINT},
+      "status" = #{status,jdbcType=TINYINT},
+      difficultyFlag = #{difficultyflag,jdbcType=TINYINT},
+      dropOutFlag = #{dropoutflag,jdbcType=TINYINT},
+      recordFlag = #{recordflag,jdbcType=TINYINT},
+      qq = #{qq,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      gradSchool = #{gradschool,jdbcType=VARCHAR},
+      gradDuty = #{gradduty,jdbcType=VARCHAR},
+      awardInfo = #{awardinfo,jdbcType=VARCHAR},
+      BBInfo = #{bbinfo,jdbcType=VARCHAR},
+      safetyboxFlag = #{safetyboxflag,jdbcType=TINYINT},
+      smokeFlag = #{smokeflag,jdbcType=TINYINT},
+      playGameFlag = #{playgameflag,jdbcType=TINYINT},
+      sourceProvince = #{sourceprovince,jdbcType=VARCHAR},
+      sourceCity = #{sourcecity,jdbcType=VARCHAR},
+      sourceRegion = #{sourceregion,jdbcType=VARCHAR},
+      postCode = #{postcode,jdbcType=CHAR},
+      fatherTel = #{fathertel,jdbcType=VARCHAR},
+      fatherCorp = #{fathercorp,jdbcType=VARCHAR},
+      motherTel = #{mothertel,jdbcType=VARCHAR},
+      motherCorp = #{mothercorp,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      schoolRoll = #{schoolroll,jdbcType=INTEGER},
+      graduateDate = #{graduatedate,jdbcType=DATE},
+      delFlag = #{delflag,jdbcType=TINYINT},
+      majorCode = #{majorcode,jdbcType=CHAR},
+      majorName = #{majorname,jdbcType=VARCHAR},
+      branchID = #{branchid,jdbcType=INTEGER},
+      branchName = #{branchname,jdbcType=VARCHAR},
+      majorCode2 = #{majorcode2,jdbcType=CHAR},
+      majorName2 = #{majorname2,jdbcType=VARCHAR},
+      majorCode3 = #{majorcode3,jdbcType=CHAR},
+      majorName3 = #{majorname3,jdbcType=VARCHAR},
+      majorCode4 = #{majorcode4,jdbcType=VARCHAR},
+      majorName4 = #{majorname4,jdbcType=VARCHAR},
+      majorCode5 = #{majorcode5,jdbcType=VARCHAR},
+      majorName5 = #{majorname5,jdbcType=VARCHAR},
+      reserve1 = #{reserve1,jdbcType=VARCHAR},
+      reserve2 = #{reserve2,jdbcType=VARCHAR},
+      roomchargeCode = #{roomchargecode,jdbcType=INTEGER},
+      modifyReason = #{modifyreason,jdbcType=VARCHAR},
+      employeeName = #{employeename,jdbcType=VARCHAR}
+    where studentID = #{studentid,jdbcType=INTEGER}
+  </update>
+</mapper>

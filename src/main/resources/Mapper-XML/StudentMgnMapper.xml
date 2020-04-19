@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.StudentMgnMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.StudentMgn">
+    <id column="studentCode" jdbcType="CHAR" property="studentcode" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    studentCode, name, password
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student_mgn
+    where studentCode = #{studentcode,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from student_mgn
+    where studentCode = #{studentcode,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.StudentMgn">
+    insert into student_mgn (studentCode, name, password
+      )
+    values (#{studentcode,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.StudentMgn">
+    insert into student_mgn
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentcode != null">
+        studentCode,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentcode != null">
+        #{studentcode,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.StudentMgn">
+    update student_mgn
+    <set>
+      <if test="name != null">
+        "name" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        "password" = #{password,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where studentCode = #{studentcode,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.StudentMgn">
+    update student_mgn
+    set name = #{name,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where studentCode = #{studentcode,jdbcType=CHAR}
+  </update>
+</mapper>

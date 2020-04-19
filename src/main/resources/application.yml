@@ -1,0 +1,18 @@
+#配置端口
+server:
+  port: 8089
+  servlet:
+    context-path: /king2
+
+### thymeleaf模板配置
+spring:
+  thymeleaf:
+    #热部署文件，页面不产生缓存，及时更新
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+

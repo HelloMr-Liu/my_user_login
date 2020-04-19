@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.king2.userlogin.mapper.TaRoleMemberMapper">
+  <resultMap id="BaseResultMap" type="com.king2.userlogin.entity.TaRoleMember">
+    <id column="role_member_id" jdbcType="INTEGER" property="roleMemberId" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="role_info_id" jdbcType="INTEGER" property="roleInfoId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    role_member_id, member_id, role_info_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ta_role_member
+    where role_member_id = #{roleMemberId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ta_role_member
+    where role_member_id = #{roleMemberId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.king2.userlogin.entity.TaRoleMember">
+    insert into ta_role_member (role_member_id, member_id, role_info_id
+      )
+    values (#{roleMemberId,jdbcType=INTEGER}, #{memberId,jdbcType=VARCHAR}, #{roleInfoId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.king2.userlogin.entity.TaRoleMember">
+    insert into ta_role_member
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleMemberId != null">
+        role_member_id,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="roleInfoId != null">
+        role_info_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleMemberId != null">
+        #{roleMemberId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleInfoId != null">
+        #{roleInfoId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.king2.userlogin.entity.TaRoleMember">
+    update ta_role_member
+    <set>
+      <if test="memberId != null">
+        member_id = #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleInfoId != null">
+        role_info_id = #{roleInfoId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where role_member_id = #{roleMemberId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king2.userlogin.entity.TaRoleMember">
+    update ta_role_member
+    set member_id = #{memberId,jdbcType=VARCHAR},
+      role_info_id = #{roleInfoId,jdbcType=INTEGER}
+    where role_member_id = #{roleMemberId,jdbcType=INTEGER}
+  </update>
+</mapper>
