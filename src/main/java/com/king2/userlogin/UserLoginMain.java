@@ -30,7 +30,6 @@ public class UserLoginMain {
     public static void main(String[] args) {
         SpringApplication.run(UserLoginMain.class);
     }
-
     @Bean
     //由于 @PropertySource 不支持yml文件的对象转换 默认支持properties
     //所以手动配置自定义 yml文件
